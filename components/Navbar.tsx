@@ -17,7 +17,7 @@ export default function NavBar() {
                 zIndex: 100,
                 borderRadius: "0 0 10px 0"
             }}>
-                <a href="#" className="text-white hover:text-blue-400 transition">
+                <a href="top" className="text-white hover:text-blue-400 transition">
                     Chrissy8283 - Portfolio
                 </a>
             </h1>
