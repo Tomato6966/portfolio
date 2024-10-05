@@ -1,4 +1,6 @@
 'use client';
+import { useEffect } from "react";
+
 import Modal from "../Modal";
 import ProjectCard from "./Card";
 import { useCardGrid } from "./CardGridContext";
@@ -10,6 +12,29 @@ export default function CardGrid() {
         projects,
     } = useCardGrid();
 
+    useEffect(() => {
+        const handleHashChange = () => {
+            const hash = window.location.hash;
+            if (hash.startsWith("#modal_")) {
+                const index = parseInt(hash.split("_")[1], 10);
+                if ((!isNaN(index) || index === 0) && projects[index]) {
+                    document.getElementById("projects")?.scrollIntoView({ behavior: 'smooth' });
+                    setModalContent(projects[index]);
+                }
+            }
+        };
+        handleHashChange();
+        window.addEventListener('hashchange', handleHashChange);
+        return () => {
+            window.removeEventListener('hashchange', handleHashChange);
+        };
+    }, [projects, setModalContent]);
+
+    const closeModal = () => {
+        setModalContent(null);
+        window.location.hash = "#projects";
+    }
+
     return (
         <>
 
@@ -20,7 +45,7 @@ export default function CardGrid() {
                         projects?.length && projects.map((project, index) => <ProjectCard index={index} project={project} key={project.title + String(index)} />)
                     }
                     {
-                        modalContent && <Modal project={modalContent} onClose={() => setModalContent(null)} />
+                        modalContent && <Modal project={modalContent} onClose={() => closeModal()} />
                     }
                 </div>
                 <div className="bg-transparent h-[10dvh]"></div>

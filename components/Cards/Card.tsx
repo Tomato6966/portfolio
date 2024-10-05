@@ -1,6 +1,7 @@
 'use client';
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import Tilt from "react-parallax-tilt";
 
 import { Project } from "../../Types/Project";
@@ -54,7 +55,10 @@ export default function ProjectCard({
             style={tiltStyle}
         >
             <motion.div
-                id={`card-${index}`}
+                onClickCapture={() => {
+                    window.history.replaceState(null, '', `#modal_${index}`);
+                }}
+                id={`modal_${index}`}
                 className={`relative bg-gray-900 rounded-lg overflow-hidden shadow-lg cursor-pointer transition-transform duration-300`}
                 onClick={() => setModalContent(project)}
                 onMouseEnter={() => setHoveredCardIndex(index)}

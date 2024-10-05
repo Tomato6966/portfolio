@@ -82,6 +82,8 @@ export default function CardGridProvider({ children, initProjects }: { children:
 
 export const useCardGrid = () => {
     const context = useContext(CardGridContext);
+
+
     if (!context) {
         throw new Error('useCardGrid must be used within a CardGridProvider');
     }
