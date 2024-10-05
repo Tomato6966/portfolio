@@ -14,7 +14,8 @@ export const metadata = {
         },
     ],
     icons: {
-        icon: '/favicon.ico',
+        icon: '/portfolio/Coder.png',
+        "apple-icon": '/portfolio/Coder.png',
     },
 };
 
