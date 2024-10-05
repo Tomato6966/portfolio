@@ -1,24 +1,29 @@
 {
   "name": "my-portfolio",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 8080 -H 0.0.0.0 --turbo",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 8080 -H 0.0.0.0 --turbo",
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^11.11.1",
+    "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.14"
+    "react-markdown": "^9.0.1",
+    "react-parallax-tilt": "^1.7.245",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-typical": "^0.1.2",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }

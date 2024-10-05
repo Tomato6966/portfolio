@@ -2,26 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.vivid-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4), 0 0 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Pacifico', cursive;
+    font-weight: 900;
+    letter-spacing: 11px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.border-text {
+    position: relative;
+    -webkit-text-stroke: 2px rgba(67, 255, 255, 0.555);
+    text-stroke: 2px rgba(67, 255, 255, 0.555);
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.cardgrid {
+    scrollbar-width: thin;
+    scrollbar-color: #1a4647 transparent;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.cardgrid::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 50%;
+}
+
+.cardgrid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cardgrid::-webkit-scrollbar-thumb {
+    background-color: #1a4647;
+    border-radius: 50%;
+    border: none;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #298a8b transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 20px;
+    border-radius: 50%;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #298a8b;
+    border-radius: 50%;
+    border: none;
 }
