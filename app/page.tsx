@@ -65,9 +65,9 @@ export default async function Home() {
             </CardGridProvider>
 
             {/* GitHub Repositories Section */}
-            <section className="snap-start h-screen">
+            <div className="snap-start h-dvh">
                 <GitHubRepoGrid />
-            </section>
+            </div>
 
 
             <Section
@@ -103,8 +103,8 @@ function Section({
 }) {
     return (
         <>
-            <section id={id} className="snap-start h-screen text-blue-300 overflow-auto">
-                <div className={`snap-start grid grid-cols-1 lg:grid-cols-2 items-center justify-center p-4 lg:p-40 gap-4 lg:gap-10 mt-[10dvh] mb-[10dvh]`}>
+            <div id={id} className="snap-start h-dvh min-h-dvh text-blue-300 overflow-auto">
+                <div className={`grid grid-cols-1 lg:grid-cols-2 items-center justify-center p-4 lg:p-40 gap-6 lg:gap-12 pt-[10dvh] pb-[10dvh]`}>
                     {datas.map(({ key, title, imageSrc, renderComp }, index) => {
                         const isEven = index % 2 === 0;
                         return (
@@ -146,7 +146,7 @@ function Section({
                         );
                     })}
                 </div>
-            </section>
+            </div>
         </>
     );
 }

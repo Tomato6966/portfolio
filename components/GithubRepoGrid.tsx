@@ -70,11 +70,9 @@ export default function GitHubRepoGrid() {
 
     return (
         <>
-            <div className="bg-transparent h-[10dvh]"></div>
 
-            <h2 className="text-4xl font-bold text-center p-8 text-blue-300">{repos?.length} GitHub Repositories ({repos.reduce((a,b) => a+b.stargazers_count, 0)} total Stars)</h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-6 lg:gap-8 md:p-16 lg:p-24 text-blue-300 snap-start h-screen overflow-y-scroll" id="github">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-2 md:gap-6 lg:gap-8 md:p-16 lg:p-24 text-blue-300 snap-start h-dvh pt-[10dvh] pb-[10dvh] overflow-y-scroll" id="github">
+                <h2 className="text-4xl font-bold text-center p-8 text-blue-300">{repos?.length} GitHub Repositories ({repos.reduce((a, b) => a + b.stargazers_count, 0)} total Stars)</h2>
                 {repos.map((repo) => (
                     <Tilt
                         glareEnable={true}
@@ -118,7 +116,6 @@ export default function GitHubRepoGrid() {
                     </Tilt>
                 ))}
             </div>
-            <div className="bg-transparent h-[10dvh]"></div>
         </>
     );
 }

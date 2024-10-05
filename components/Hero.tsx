@@ -17,7 +17,7 @@ export default function Hero({ images }: { images: string[] }) {
     }, [images]);
 
     return (
-        <div className="snap-start h-full flex items-center justify-center bg-gray-900" id="top">
+        <div className="snap-start h-dvh flex items-center justify-center bg-gray-900" id="top">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                 <AnimatePresence>
                     {images.length > 0 && (

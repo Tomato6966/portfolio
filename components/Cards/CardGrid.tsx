@@ -38,9 +38,8 @@ export default function CardGrid() {
     return (
         <>
 
-            <div className="snap-start h-screen overflow-y-scroll cardgrid" id="projects">
-                <div className="bg-transparent h-[10dvh]"></div>
-                <div className="p-0 py-16 h-dvh relative">
+            <div className="snap-start h-dvh overflow-y-scroll cardgrid" id="projects">
+                <div className="p-0 py-16 h-dvh pt-[10dvh] pb-[10dvh] relative">
                     {
                         projects?.length && projects.map((project, index) => <ProjectCard index={index} project={project} key={project.title + String(index)} />)
                     }
@@ -48,7 +47,6 @@ export default function CardGrid() {
                         modalContent && <Modal project={modalContent} onClose={() => closeModal()} />
                     }
                 </div>
-                <div className="bg-transparent h-[10dvh]"></div>
             </div>
 
         </>

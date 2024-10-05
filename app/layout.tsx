@@ -26,9 +26,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className="backdrop-blur-lg h-screen overflow-hidden bg-black">
+            <body className="backdrop-blur-lg h-dvh overflow-hidden bg-black">
                 <NavBar />
-                <div className="relative h-screen overflow-y-scroll snap-y snap-mandatory bg-gradient-to-br from-purple-900/20 to-blue-900/20">
+                <div className="relative h-dvh overflow-y-scroll snap-y snap-mandatory bg-gradient-to-br from-purple-900/20 to-blue-900/20">
                     {children}
                 </div>
             </body>
