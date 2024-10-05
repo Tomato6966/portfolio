@@ -9,7 +9,7 @@ export async function getProjects() {
       return {
         title: title.replace('# ', ''),
         description: description.join("\n"),
-        thumbnail: `/cards/${folder}/Overview.png`,
+        thumbnail: `/portfolio/cards/${folder}/Overview.png`,
         markdown: overview,
       };
     });

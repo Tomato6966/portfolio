@@ -16,13 +16,13 @@ const MarkdownImageOrVideo = ({ src, alt }: { src?: string; alt?: string }) => {
     if (isVideo) {
         return (
             <video controls className="rounded-3xl w-full">
-                <source src={src} type="video/mp4" />
+                <source src={"/portfolio" + src} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
         );
     }
 
-    return <img src={src} alt={alt} className="rounded-3xl" />;
+    return <img src={"/portfolio" + src} alt={alt} className="rounded-3xl" />;
 };
 
 export default function Modal({

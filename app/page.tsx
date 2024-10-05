@@ -25,7 +25,7 @@ export default async function Home() {
                         {
                             key: "aboutme",
                             title: "About Me",
-                            imageSrc: "/carousel/Chrissy.jpg",
+                            imageSrc: "/portfolio/carousel/Chrissy.jpg",
                             renderComp: (<p>
                                 👋 Hello World! <br />
                                 I'm chrissy, 21 Years old and from Austria. <br />
@@ -42,7 +42,7 @@ export default async function Home() {
                         {
                             key: "milratodevelopment",
                             title: "Milrato Development",
-                            imageSrc: "/carousel/MilratoWinter.png",
+                            imageSrc: "/portfolio/carousel/MilratoWinter.png",
                             renderComp: (<p>
                                 You might also know be as
                                 <code className="p-1 border bg-blue-500/30 border-blue-800 rounded-md">Tomato6966</code>
@@ -77,7 +77,7 @@ export default async function Home() {
                         {
                             key: "Services",
                             title: "Services",
-                            imageSrc: "/carousel/Chrissy.jpg",
+                            imageSrc: "/portfolio/carousel/Chrissy.jpg",
                             renderComp: (<p>
                                 I offer multiple services
                             </p>)
