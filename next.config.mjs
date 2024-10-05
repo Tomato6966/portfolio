@@ -5,9 +5,7 @@ const nextConfig = {
             'avatars.githubusercontent.com',
             'opengraph.githubassets.com'
         ],
-        unoptimized: true,
     },
-    basePath: "/portfolio",
     output: 'export',
 };
 
