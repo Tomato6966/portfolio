@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "next dev -p 8080 -H 0.0.0.0 --turbo",
     "build": "next build",
-    "start": "next start -p 8080 -H 0.0.0.0 --turbo",
+    "start": "npx serve@latest out -l tcp://0.0.0.0:8080",
     "lint": "next lint",
     "export": "next export"
   },

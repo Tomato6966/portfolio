@@ -5,18 +5,9 @@ import { useEffect, useState } from "react";
 
 import AnimatedLinkButton from "./Button";
 import TypingText from "./TypingText";
-import { getAllHeroImages } from "./Utils/Hero";
 
-export default function Hero() {
-    const [currentImage, setCurrentImage] = useState(0);
-    const [images, setImages] = useState<string[]>([]);
-
-    useEffect(() => {
-        getAllHeroImages().then((imgs) => {
-            setImages(imgs);
-            setCurrentImage(Math.floor(Math.random() * imgs.length)); // Start with a random image
-        });
-    }, []);
+export default function Hero({ images }: { images: string[] }) {
+    const [currentImage, setCurrentImage] = useState(Math.floor(Math.random() * images.length));
 
     useEffect(() => {
         const interval = setInterval(() => {

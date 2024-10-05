@@ -2,7 +2,6 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 
 import { Project } from "../../Types/Project";
-import { getProjects } from "../Utils/Cards";
 
 interface CardGridContextType {
     modalContent: Project | null;
@@ -22,9 +21,9 @@ interface CardGridContextType {
 
 const CardGridContext = createContext<CardGridContextType | undefined>(undefined);
 
-export default function CardGridProvider({ children }: { children: ReactNode }) {
+export default function CardGridProvider({ children, initProjects }: { children: ReactNode, initProjects:Project[] }) {
     const [modalContent, setModalContent] = useState<Project | null>(null);
-    const [projects, setProjects] = useState<Project[]>([]);
+    const [projects, setProjects] = useState<Project[]>(initProjects);
     const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
     const [columns, setColumns] = useState<number>(3);
     const [additionalMargin, setAdditionalMargin] = useState<number>(0);
@@ -32,8 +31,6 @@ export default function CardGridProvider({ children }: { children: ReactNode }) 
     const cardSpaceGap = 50;
 
     useEffect(() => {
-        getProjects().then(setProjects);
-        // Function to calculate the number of columns based on window width
         const calculateColumns = () => {
             const width = window.innerWidth;
             if (width < 600) {

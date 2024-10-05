@@ -1,5 +1,3 @@
-'use client';
-
 import "./globals.css";
 
 import Image from "next/image";
@@ -9,11 +7,16 @@ import CardGrid from "../components/Cards/CardGrid";
 import CardGridProvider from "../components/Cards/CardGridContext";
 import GitHubRepoGrid from "../components/GithubRepoGrid";
 import Hero from "../components/Hero";
+import { getProjects } from "../components/Utils/Cards";
+import { getAllHeroImages } from "../components/Utils/Hero";
 
-export default function Home() {
+export default async function Home() {
+    const images = await getAllHeroImages();
+    const projects = await getProjects();
+
     return (
         <>
-            <Hero />
+            <Hero images={images}/>
 
             <Section
                 id="about"
@@ -57,8 +60,8 @@ export default function Home() {
                 }
             />
 
-            <CardGridProvider>
-                <CardGrid />
+            <CardGridProvider initProjects={projects}>
+                <CardGrid/>
             </CardGridProvider>
 
             {/* GitHub Repositories Section */}
