@@ -5,7 +5,8 @@
     "dev": "next dev -p 8080 -H 0.0.0.0 --turbo",
     "build": "next build",
     "start": "next start -p 8080 -H 0.0.0.0 --turbo",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "framer-motion": "^11.11.1",

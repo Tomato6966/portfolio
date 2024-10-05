@@ -5,7 +5,9 @@ const nextConfig = {
             'avatars.githubusercontent.com',
             'opengraph.githubassets.com'
         ],
+        unoptimized: true,
     },
+    output: 'export',
 };
 
 export default nextConfig;
