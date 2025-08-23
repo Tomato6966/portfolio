@@ -37,12 +37,12 @@ export default function GitHubRepoGrid() {
             let allRepos: Repository[] = [];
             let page = 1;
 
-            while (allRepos.length < 100) { // Ändere die Anzahl nach Bedarf
+            while (true) { // Fetch all pages until no more data is returned
                 try {
                     const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&page=${page}`);
                     const data: Repository[] = await response.json();
 
-                    if (data.length === 0) break; // Stoppe, wenn keine Daten mehr zurückgegeben werden
+                    if (data.length === 0) break; // Stop if no more data is returned
 
                     const reposWithThumbnails = data.map(repo => {
                         const thumbnail = fetchRepoThumbnail(repo.owner.login, repo.name); // Generiere Thumbnail-URL
